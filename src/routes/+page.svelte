@@ -7,32 +7,32 @@
 	const { form, errors, constraints, message } = superForm(data.form);
 </script>
 
-<div>
-	<!-- <div class="logo-container"> -->
-	<!-- 	<img class="logo" src={'/src/logo.png'} /> -->
-	<!-- </div> -->
-	<!-- <span> For inquiries, you can reach Adrian at: </span> -->
-	<!-- <a href={'mailto:' + email}>{email}</a> -->
+<div class="content">
+	<div class="logo-container">
+		<img class="logo" src={'/src/logo.png'} />
+	</div>
+	<span> For inquiries, you can reach Adrian at: </span>
+	<a href={'mailto:' + email}>{email}</a>
 
-	{#if $message}<h3>{$message}</h3>{/if}
-
-	<form method="POST">
-		<label for="name">
-			Full Name:
-			<input type="text" name="name" bind:value={$form.name} />
-		</label>
-		<label for="email">
-			Email Address:
-			<input type="email" name="email" bind:value={$form.email} />
-		</label>
-		<label for="message">
-			Message:
-			<input name="message" type="text" bind:value={$form.message} />
-		</label>
-		<button type="submit">Submit</button>
-	</form>
-
-	<SuperDebug data={$form} />
+	<!-- {#if $message}<h3>{$message}</h3>{/if} -->
+	<!---->
+	<!-- <form method="POST"> -->
+	<!-- 	<label for="name"> -->
+	<!-- 		Full Name: -->
+	<!-- 		<input type="text" name="name" bind:value={$form.name} /> -->
+	<!-- 	</label> -->
+	<!-- 	<label for="email"> -->
+	<!-- 		Email Address: -->
+	<!-- 		<input type="email" name="email" bind:value={$form.email} /> -->
+	<!-- 	</label> -->
+	<!-- 	<label for="message"> -->
+	<!-- 		Message: -->
+	<!-- 		<input name="message" type="text" bind:value={$form.message} /> -->
+	<!-- 	</label> -->
+	<!-- 	<button type="submit">Submit</button> -->
+	<!-- </form> -->
+	<!---->
+	<!-- <SuperDebug data={$form} /> -->
 </div>
 
 <!-- NEW STUFF -->
@@ -92,6 +92,19 @@
 <!-- </style> -->
 
 <style>
+	:global(body) {
+		width: 100%;
+		height: 100svh;
+		display: grid;
+		place-items: center;
+		margin: 0;
+	}
+
+	.content {
+		width: fit-content;
+		height: fit-content;
+	}
+
 	.logo {
 		object-fit: cover;
 	}
