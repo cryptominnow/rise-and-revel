@@ -13,7 +13,7 @@
 	</div>
 	<span>
 		For inquiries, you can reach Adrian at <a href={'mailto:' + email}>{email}</a> or visit our
-		<a href="https://bakesy.shop/b/rise-revel-bakehouse/gallery">shop.</a>
+		<a href="https://bakesy.shop/b/rise-revel-bakehouse">shop</a>.
 	</span>
 	<div class="gallery">
 		<img src="/src/mini-loaves-1.jpg" alt="" />
