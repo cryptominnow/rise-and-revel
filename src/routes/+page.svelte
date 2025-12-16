@@ -9,10 +9,18 @@
 
 <div class="content">
 	<div class="logo-container">
-		<img class="logo" src={'/src/logo.png'} />
+		<img class="logo" src={'/src/logo-cropped.png'} />
 	</div>
-	<span> For inquiries, you can reach Adrian at: </span>
-	<a href={'mailto:' + email}>{email}</a>
+	<span>
+		For inquiries, you can reach Adrian at <a href={'mailto:' + email}>{email}</a> or visit our
+		<a href="https://bakesy.shop/b/rise-revel-bakehouse/gallery">shop.</a>
+	</span>
+	<div class="gallery">
+		<img src="/src/mini-loaves-1.jpg" alt="" />
+		<img src="/src/cookie-1.jpg" alt="" />
+		<img src="/src/pumpkin-danishes.jpg" alt="" />
+		<img src="/src/mini-loaves-2.jpg" alt="" />
+	</div>
 
 	<!-- {#if $message}<h3>{$message}</h3>{/if} -->
 	<!---->
@@ -98,15 +106,41 @@
 		display: grid;
 		place-items: center;
 		margin: 0;
+		font-family: 'Crimson Text', serif;
+		text-align: center;
+		font-size: 1.125rem;
 	}
 
 	.content {
+		max-width: 500px;
 		width: fit-content;
 		height: fit-content;
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		padding: 0.5em;
 	}
 
-	.logo {
-		object-fit: cover;
+	.gallery {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.5em;
+		& img {
+			width: 100%;
+			aspect-ratio: 1;
+			object-fit: cover;
+		}
+	}
+
+	.logo-container {
+		display: grid;
+		place-items: center;
+		overflow: hidden;
+		.logo {
+			width: 100%;
+			max-width: fit-content;
+			object-position: center;
+		}
 	}
 
 	form {
