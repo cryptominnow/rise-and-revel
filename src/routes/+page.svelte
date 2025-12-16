@@ -5,21 +5,32 @@
 
 	const { data } = $props();
 	const { form, errors, constraints, message } = superForm(data.form);
+
+	import Logo from '/src/logo-cropped.png';
+	import MiniLoaves1 from '/src/mini-loaves-1.jpg';
+	import Cookie from '/src/cookie-1.jpg';
+	import PumpkinDanishes from '/src/pumpkin-danishes.jpg';
+	import MiniLoaves2 from '/src/mini-loaves-2.jpg';
+	const galleryImages: { src: string; alt: string }[] = [
+		{ src: MiniLoaves1, alt: 'A flight of four round mini loaves with various inclusions' },
+		{ src: Cookie, alt: 'A festive iced cookie' },
+		{ src: PumpkinDanishes, alt: 'A box of four cream cheese pumpkin danishes' },
+		{ src: MiniLoaves2, alt: 'A flight of four long mini loaves with various inclusions' }
+	];
 </script>
 
 <div class="content">
 	<div class="logo-container">
-		<img class="logo" src={'/src/logo-cropped.png'} />
+		<img class="logo" src={Logo} alt="Rise & Revel Bakehouse" />
 	</div>
 	<span>
 		For inquiries, you can reach Adrian at <a href={'mailto:' + email}>{email}</a> or visit our
 		<a href="https://bakesy.shop/b/rise-revel-bakehouse">shop</a>.
 	</span>
 	<div class="gallery">
-		<img src="/src/mini-loaves-1.jpg" alt="" />
-		<img src="/src/cookie-1.jpg" alt="" />
-		<img src="/src/pumpkin-danishes.jpg" alt="" />
-		<img src="/src/mini-loaves-2.jpg" alt="" />
+		{#each galleryImages as { src, alt }}
+			<img {src} {alt} />
+		{/each}
 	</div>
 
 	<!-- {#if $message}<h3>{$message}</h3>{/if} -->
